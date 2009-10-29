@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+html {
+	overflow-y: scroll;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%; /* needed for container min-height */
+	background: #333;
+
+	font-size: 0.9em;
+	font-family: "Helvetica Neue",Arial,Verdana,sans-serif;
+	color: black;
+}
+
+a, a:link, a:visited {
+	color: #8c8c8c;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #ccc;
+	}
+
+div#container {
+	position: relative;
+
+	height: auto !important;
+	height: 100%;
+	min-height: 100%;
+}
+
+div#toplinks ul {
+	width: auto;
+	margin: 5px;
+	padding: 0;
+	float: left;
+}
+
+div#toplinks li {
+	list-style: none;
+	display: inline;
+}
+
+div#account {
+	width: auto;
+	float: right;
+}
+
+div#header {
+	clear: left;
+	background: #000;
+	color: #fff;
+	height: 100px;
+}
+
+	div#header h1 {
+		float: left;
+		position: relative;
+		left: 20px;
+	}
+
+div#body {
+	margin: 10px;
+	background: #f0f0f0;
+}
+
+div#footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0; /* stick to the bottom of the page */
+
+	font-size: 0.9em;
+	color: #aaa;
+	text-align: center;
+}
+
+	div#footer a {
+		color: #ccc;
+		text-decoration: none;
+	}
+
+		div#footer a:hover {
+			color: #fff;
+		}
