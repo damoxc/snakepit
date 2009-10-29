@@ -1,0 +1,3 @@
+include snakepit/config/deployment.ini_tmpl
+recursive-include snakepit/public *
+recursive-include snakepit/templates *
