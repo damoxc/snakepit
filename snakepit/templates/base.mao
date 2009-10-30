@@ -5,6 +5,9 @@
 		<title>Snakepit</title>
 		<link rel="stylesheet" href="/css/snakepit.css" type="text/css" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<script src="/js/mootools-1.2.4-core-yc.js" type="text/javascript"></script>
+		<script src="/js/snakepit.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div id="container">
