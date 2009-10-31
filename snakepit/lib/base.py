@@ -5,7 +5,7 @@ Provides the BaseController class for subclassing.
 from pylons.controllers import WSGIController
 from pylons.templating import render_mako as render
 
-from snakepit.model import meta
+from snakepit.model import db
 
 class BaseController(WSGIController):
 
@@ -17,4 +17,4 @@ class BaseController(WSGIController):
         try:
             return WSGIController.__call__(self, environ, start_response)
         finally:
-            meta.Session.remove()
+            db.remove()
