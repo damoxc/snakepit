@@ -90,3 +90,20 @@ div#footer {
 		div#footer a:hover {
 			color: #fff;
 		}
+
+form#login {
+	background: #dfdfdf;
+	border: 1px solid #666;
+	width: 600px;
+	margin: 0 auto;
+}
+
+	form#login label {
+		float: left;
+		clear: left;
+		width: 150px;
+	}
+	
+	form#login input {
+		margin-left: 150px;
+	}
