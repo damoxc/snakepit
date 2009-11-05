@@ -35,7 +35,11 @@
 				</ul>
 			</div>
 			<div id="header">
+				% if c.project:
+				<h1>${c.project.name}</h1>
+				% else:
 				<h1>Snakepit</h1>
+				% endif
 			</div>
 			<div id="body">
 				${next.body()}

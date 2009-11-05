@@ -44,5 +44,5 @@ class ProjectsController(BaseController):
     def show(self):
         project = request.urlvars.get('id')
         c.project = db.query(Project).filter_by(identifier=project).first()
-        return None
+        return render('/projects/show.mao')
         
