@@ -35,29 +35,36 @@ div#container {
 	min-height: 100%;
 }
 
+div#toplinks {
+	background: #1a1a1a;
+}
+
 div#toplinks ul {
 	width: auto;
-	margin: 5px;
+	margin: 0;
 	padding: 0;
 	float: left;
 }
 
 div#toplinks li {
 	list-style: none;
+	padding-left: 10px;
 	display: inline;
 	font-size: 0.9em;
+	line-height: 30px;
 }
 
 div#account {
 	width: auto;
 	float: right;
+	margin-right: 20px;
 }
 
 div#header {
 	clear: left;
-	background: url('/images/bottom_shine.png') repeat-x #000;
+	background: url('/images/bottom_shine.png') repeat-x #000 scroll left bottom;
 	color: #fff;
-	height: 5.3;
+	height: 100px;
 	position: relative;
 }
 

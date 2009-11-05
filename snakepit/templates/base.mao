@@ -33,6 +33,7 @@
 						<a class="help" href="http://snakepit.damoxc.net/help">Help</a>
 					</li>
 				</ul>
+				<br style="clear: both;" />
 			</div>
 			<div id="header">
 				% if c.project:
