@@ -7,7 +7,7 @@ available to Controllers. This module is available to templates as 'h'.
 import time
 from os.path import join as join_path
 from routes import url_for
-from webhelpers.html import tags, escape as _escape, literal as _literal
+from webhelpers.html import tags, tools, escape as _escape, literal as _literal
 from snakepit.lib import to_unicode
 
 def escape(text):
