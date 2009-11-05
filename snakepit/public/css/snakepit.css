@@ -91,19 +91,48 @@ div#footer {
 			color: #fff;
 		}
 
+form label {
+	color: #333;
+	line-height: 25px;
+}
+
+form input {
+	line-height: 25px;
+	border: 1px solid #ccc;
+}
+
 form#login {
-	background: #dfdfdf;
-	border: 1px solid #666;
-	width: 600px;
+	background: #FFEBC1;
+	border: 2px solid #FDBF3B;
+	width: 400px;
+	height: 75px;
+	padding: 20px;
 	margin: 0 auto;
+	position: relative;
 }
 
 	form#login label {
+		width: 100px;
 		float: left;
 		clear: left;
-		width: 150px;
+		text-align: right;
+		font-weight: bold;
 	}
 	
 	form#login input {
-		margin-left: 150px;
+		float: left;
+		margin-left: 20px;
+		width: 260px;
+	}
+	
+	form#login a {
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+	
+	form#login button {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
 	}
