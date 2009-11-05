@@ -4,13 +4,13 @@ html,body {
 	margin: 0;
 	padding: 0;
 	height: 100%; /* needed for container min-height */
-	background: #222;
+	background: #333 url(/images/bottom_shine.png) repeat-x scroll left bottom;
 	
 	min-width: 900px;
 
 	font-size: 0.9em;
 	font-family: "Helvetica Neue",Arial,Verdana,sans-serif;
-	color: black;
+	color: #484848;
 }
 
 a, a:link, a:visited {
@@ -57,7 +57,8 @@ div#header {
 	clear: left;
 	background: url('/images/bottom_shine.png') repeat-x #000;
 	color: #fff;
-	height: 90px;
+	height: 5.3;
+	position: relative;
 }
 
 	div#header h1 {
@@ -67,11 +68,49 @@ div#header {
 		margin: 5px;
 	}
 
+div#main-menu {
+	position: absolute;
+	bottom: 0px;
+	left: 6px;
+	right: 6px;
+}
+
+	div#main-menu ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	div#main-menu li {
+		float: left;
+		list-style-type: none;
+		border-color: #333;
+		border-style: solid;
+		border-width: 1px 1px 0 0;
+		background: #111 url('/images/bottom_shine.png') repeat-x 0 -40px;
+	}
+	
+	div#main-menu li:first-child {
+		-moz-border-radius-topleft: 5px;
+	}
+	
+	div#main-menu li:last-child {
+		-moz-border-radius-topright: 5px;
+	}
+	
+	div#main-menu a {
+		padding: 5px 10px;
+		line-height: 20px;
+		display: block;
+	}
+	
+	div#main-menu li.selected {
+		background: #333;
+	}
+
 div#body {
 	margin: 10px;
 	padding: 10px;
 	background: url('/images/shadow_top.png') repeat-x #fff;
-	border: 1px solid #666;
 	min-height: 600px;
 }
 

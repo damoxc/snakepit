@@ -1,13 +1,13 @@
+<%def name="extra_header_info()"></%def>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
 		<title>Snakepit</title>
-		<link rel="stylesheet" href="/css/snakepit.css" type="text/css" />
+		${h.tags.stylesheet_link('/css/snakepit.css')}
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		
-		<script src="/js/mootools-1.2.4-core-yc.js" type="text/javascript"></script>
-		<script src="/js/snakepit.js" type="text/javascript"></script>
+		${h.tags.javascript_link('/js/mootools-1.2.4-core-yc.js', '/js/snakepit.js')}
 	</head>
 	<body>
 		<div id="container">
@@ -27,7 +27,7 @@
 						<a class="home" href="/">Home</a>
 					</li>
 					<li>
-						<a class="proejcts" href="/projects">Projects</a>
+						<a class="projects" href="/projects">Projects</a>
 					</li>
 					<li>
 						<a class="help" href="http://snakepit.damoxc.net/help">Help</a>
@@ -40,6 +40,7 @@
 				% else:
 				<h1>Snakepit</h1>
 				% endif
+				<%self:extra_header_info />
 			</div>
 			<div id="body">
 				${next.body()}
