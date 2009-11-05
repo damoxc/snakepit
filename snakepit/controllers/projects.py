@@ -11,6 +11,7 @@ log = logging.getLogger(__name__)
 class ProjectsController(BaseController):
 
     def index(self):
+        c.projects = db.query(Project).all()
         return render('/projects/index.mao')
     
     def add(self):
