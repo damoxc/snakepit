@@ -171,7 +171,7 @@ projects = Table('projects', meta,
     PrimaryKeyConstraint('id')
 )
 
-projects_trackers = Table('projects_treackers', meta,
+projects_trackers = Table('projects_trackers', meta,
     Column('project_id', Integer),
     Column('tracker_id', Integer)
 )
