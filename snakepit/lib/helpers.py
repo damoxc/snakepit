@@ -19,6 +19,9 @@ def literal(text):
 def timestamp():
     return int(time.time())
 
+def required():
+    return _literal('<span class="required">*</span>')
+
 TIME_WORDS = ['second', 'minute', 'hour', 'day', 'week', 'year', 'decade']
 
 def time_ago_in_words(seconds, units=2):

@@ -11,3 +11,6 @@ class ProjectsController(BaseController):
 
     def index(self):
         return render('/projects/index.mao')
+    
+    def add(self):
+        return render('/projects/add.mao')

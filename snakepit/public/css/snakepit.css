@@ -23,6 +23,10 @@ a, a:link, a:visited {
 		color: #ccc;
 	}
 
+h2 {
+	color: #333;
+}
+
 div#container {
 	position: relative;
 
@@ -93,14 +97,72 @@ div#footer {
 
 form label {
 	color: #333;
-	line-height: 25px;
+	line-height: 20px;
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	font-weight: bold;
+	margin-top: 10px;
 }
 
 form input {
-	line-height: 25px;
+	height: 1.2em;
+	float: left;
+	margin-left: 20px;
+	width: 260px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+}
+
+	form input:hover {
+		border-color: #999;
+	}
+	
+	form input:focus {
+		border-color: #666;
+	}
+
+form textarea {
+	float: left;
+	margin-left: 20px;
+	border: 1px solid #ccc;
+	width: 88%;
+	height: 100px;
+	margin-top: 10px;
+}
+
+	form textarea:hover {
+		border-color: #999;
+	}
+	
+	form textarea:focus {
+		border-color: #666;
+	}
+
+form span.description {
+	color: #333;
+	font-style: italic;
+	clear: left;
+	float: left;
+	margin-left: 120px;
+}
+
+form span.required {
+	color: #ff0000;
+}
+
+form button {
+	margin-top: 10px;
+	float: left;
+	clear: left;
 	border: 1px solid #ccc;
 }
 
+
+/*********************
+ * Login Form Starts *
+ *********************/
 form#login {
 	background: #FFEBC1;
 	border: 2px solid #FDBF3B;
@@ -110,20 +172,6 @@ form#login {
 	margin: 0 auto;
 	position: relative;
 }
-
-	form#login label {
-		width: 100px;
-		float: left;
-		clear: left;
-		text-align: right;
-		font-weight: bold;
-	}
-	
-	form#login input {
-		float: left;
-		margin-left: 20px;
-		width: 260px;
-	}
 	
 	form#login a {
 		position: absolute;
