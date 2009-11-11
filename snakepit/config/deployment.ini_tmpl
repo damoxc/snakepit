@@ -7,7 +7,7 @@
 debug = true
 email_to = you@yourdomain.com
 smtp_server = localhost
-error_email_from = paste@localhost
+error_email_from = snakepit@localhost
 
 [server:main]
 use = egg:Paste#http
