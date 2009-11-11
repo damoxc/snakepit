@@ -46,4 +46,17 @@ class ProjectsController(BaseController):
         project = request.urlvars.get('id')
         c.project = db.query(Project).filter_by(identifier=project).first()
         return render('/projects/show.mao')
-        
+    
+    def activity(self):
+        pass
+    
+    def settings(self):
+        project = request.urlvars.get('id')
+        c.project = db.query(Project).filter_by(identifier=project).first()
+        c.tabs = [
+            ('info', 'Information'),
+            ('modules', 'Modules'),
+            ('members', 'Members'),
+            ('versions', 'Versions')
+        ]
+        return render('/projects/settings.mao')
