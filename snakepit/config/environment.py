@@ -10,7 +10,10 @@ import snakepit.lib.app_globals as app_globals
 import snakepit.lib.helpers
 from snakepit.config.routing import make_map
 from snakepit.model import init_model
-from snakepit.lib.modules import load_modules
+
+def load_controllers():
+    import snakepit.controllers.projects
+    import snakepit.controllers.wiki
 
 def load_environment(global_conf, app_conf):
     """Configure the Pylons environment via the ``pylons.config``
@@ -44,5 +47,4 @@ def load_environment(global_conf, app_conf):
 
     # CONFIGURATION OPTIONS HERE (note: all config options will override
     # any Pylons config options)
-
-    load_modules()
+    load_controllers()

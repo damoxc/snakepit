@@ -2,13 +2,16 @@
 
 Provides the BaseController class for subclassing.
 """
-from pylons import tmpl_context as c, request
+from pylons import config, tmpl_context as c, request
 from pylons.controllers import WSGIController
 from pylons.decorators.secure import abort
 from pylons.templating import render_mako as render
 
 from snakepit.model import db
 from snakepit.lib.component import register
+
+def connect(*args, **kwargs):
+    return config['routes.map'].connect(*args, **kwargs)
 
 class BaseController(WSGIController):
     
