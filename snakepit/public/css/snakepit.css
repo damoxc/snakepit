@@ -4,8 +4,8 @@ html,body {
 	margin: 0;
 	padding: 0;
 	height: 100%; /* needed for container min-height */
-	background: #333 url(/images/bottom_shine.png) repeat-x scroll left bottom;
-	
+	background: #fff url(/images/bottom_shine.png) repeat-x scroll left bottom;
+
 	min-width: 900px;
 
 	font-size: 0.9em;
@@ -14,13 +14,13 @@ html,body {
 }
 
 a, a:link, a:visited {
-	color: #8c8c8c;
+	color: #5a6683;
 	font-weight: bold;
 	text-decoration: none;
 }
 
 	a:hover {
-		color: #ccc;
+		color: #848ea9;
 	}
 
 h2 {
@@ -36,7 +36,7 @@ div#container {
 }
 
 div#toplinks {
-	background: #1a1a1a;
+	background: url('/images/headerMenu.png') repeat-x;
 }
 
 div#toplinks ul {
@@ -48,10 +48,21 @@ div#toplinks ul {
 
 div#toplinks li {
 	list-style: none;
-	padding-left: 10px;
+	padding-left: 0.9em;
 	display: inline;
 	font-size: 0.9em;
-	line-height: 30px;
+	line-height: 28px;
+}
+
+div#toplinks li a {
+	color: #fff;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div#toplinks li a:hover {
+	text-decoration: underline;
 }
 
 div#account {
@@ -62,24 +73,41 @@ div#account {
 
 div#header {
 	clear: left;
-	background: url('/images/bottom_shine.png') repeat-x #000 scroll left bottom;
-	color: #fff;
+	background: url('/images/headerGradient.png') repeat-x;
 	height: 100px;
 	position: relative;
 }
 
 	div#header h1 {
-		float: left;
-		position: relative;
-		font-size: 2.5em;
-		margin: 5px;
+		position: absolute;
+		right: 5px;
+		bottom: 5px;
+		margin: 0;
+		
+		background: url('/images/logo.png');
+		width: 210px;
+		height: 60px;
 	}
+
+		div#header h1 span {
+			display: none;
+		}
+
+div#header h2 {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	margin: 0;
+	padding: 0;
+	color: #5a6683;
+	font-size: 2.5em;
+}
 
 div#main-menu {
 	position: absolute;
 	bottom: 0px;
-	left: 6px;
-	right: 6px;
+	left: 10px;
+	right: 10px;
 }
 
 	div#main-menu ul {
@@ -90,34 +118,35 @@ div#main-menu {
 	div#main-menu li {
 		float: left;
 		list-style-type: none;
-		border-color: #333;
+		border-color: #aaa;
 		border-style: solid;
 		border-width: 1px 1px 0 0;
-		background: #111 url('/images/bottom_shine.png') repeat-x 0 -40px;
+		background: #dfdfdf url('/images/bottom_shine.png') repeat-x 0 -40px;
 	}
-	
+
 	div#main-menu li:first-child {
 		-moz-border-radius-topleft: 5px;
 	}
-	
+
 	div#main-menu li:last-child {
 		-moz-border-radius-topright: 5px;
 	}
-	
+
 	div#main-menu a {
+		color: #666;
 		padding: 5px 10px;
 		line-height: 20px;
 		display: block;
 	}
-	
+
 	div#main-menu li.selected {
-		background: #333;
+		background: #efefef;
 	}
 
 div#body {
 	margin: 10px;
 	padding: 10px;
-	background: url('/images/shadow_top.png') repeat-x #fff;
+	/*background: url('/images/shadow_top.png') repeat-x #fff;*/
 	min-height: 600px;
 }
 
@@ -127,19 +156,19 @@ div#footer {
 	bottom: 0; /* stick to the bottom of the page */
 
 	font-size: 0.9em;
-	color: #aaa;
+	color: #666;
 	text-align: center;
 	padding-bottom: 5px;
 }
 
 	div#footer a {
-		color: #ccc;
+		color: #999;
 		text-decoration: none;
 	}
 
-		div#footer a:hover {
-			color: #fff;
-		}
+	div#footer a:hover {
+		color: #333;
+	}
 
 form label {
 	color: #333;
@@ -164,7 +193,7 @@ form input {
 	form input:hover {
 		border-color: #999;
 	}
-	
+
 	form input:focus {
 		border-color: #666;
 	}
@@ -181,7 +210,7 @@ form textarea {
 	form textarea:hover {
 		border-color: #999;
 	}
-	
+
 	form textarea:focus {
 		border-color: #666;
 	}
@@ -207,8 +236,8 @@ form button {
 
 
 /*********************
- * Login Form Starts *
- *********************/
+	* Login Form Starts *
+	*********************/
 form#login {
 	background: #FFEBC1;
 	border: 2px solid #FDBF3B;
@@ -218,13 +247,13 @@ form#login {
 	margin: 0 auto;
 	position: relative;
 }
-	
+
 	form#login a {
 		position: absolute;
 		bottom: 10px;
 		left: 10px;
 	}
-	
+
 	form#login button {
 		position: absolute;
 		bottom: 10px;

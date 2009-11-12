@@ -36,11 +36,7 @@
 				<br style="clear: both;" />
 			</div>
 			<div id="header">
-				% if c.project:
-				<h1>${c.project.name}</h1>
-				% else:
-				<h1>Snakepit</h1>
-				% endif
+				<h1><span>Snakepit</span></h1>
 				<%self:extra_header_info />
 			</div>
 			<div id="body">

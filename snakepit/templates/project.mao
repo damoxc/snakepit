@@ -1,4 +1,5 @@
 <%def name="extra_header_info()">
+	<h2>${c.project.name}</h2>
 	<div id="main-menu">
 		<ul>
 			<li class="selected"><a href="/projects/show/deluge" class="overview">Overview</a></li>
