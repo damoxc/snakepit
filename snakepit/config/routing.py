@@ -21,6 +21,6 @@ def make_map():
     # CUSTOM ROUTES HERE
     map.connect('/', controller='main')
     map.connect('/projects/{action}', controller='projects')
-    map.connect('/projects/{action}/{id}', controller='projects')
+    map.connect('/projects/{action}/{project}', controller='projects')
 
     return map

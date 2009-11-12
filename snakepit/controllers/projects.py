@@ -3,7 +3,7 @@ import logging
 from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
-from snakepit.lib.base import ProjectsBaseController, render
+from snakepit.lib.base import ProjectsBaseController, ProjectsMenuItem, render
 from snakepit.lib.component import register
 from snakepit.model import db, Project
 
@@ -44,7 +44,7 @@ class ProjectsController(ProjectsBaseController):
         return render('/projects/add.mao')
     
     def show(self):
-        project = request.urlvars.get('id')
+        project = request.urlvars.get('project')
         c.project = db.query(Project).filter_by(identifier=project).first()
         return render('/projects/show.mao')
     
@@ -52,7 +52,7 @@ class ProjectsController(ProjectsBaseController):
         pass
     
     def settings(self):
-        project = request.urlvars.get('id')
+        project = request.urlvars.get('project')
         c.project = db.query(Project).filter_by(identifier=project).first()
         c.tabs = [
             ('info', 'Information'),
@@ -64,6 +64,9 @@ class ProjectsController(ProjectsBaseController):
 
 register('ProjectsController', ProjectsController)
 
-ProjectsBaseController.register_menu_item('Overview')
-ProjectsBaseController.register_menu_item('Activity')
-ProjectsBaseController.register_menu_item('Settings')
+ProjectsBaseController.register_menu_item('overview',
+    ProjectsMenuItem('Overview', controller='projects', action='show'))
+ProjectsBaseController.register_menu_item('activity',
+    ProjectsMenuItem('Activity', controller='projects', action='activity'))
+ProjectsBaseController.register_menu_item('settings',
+    ProjectsMenuItem('Settings', controller='projects', action='settings'))

@@ -2,6 +2,8 @@
 
 Provides the BaseController class for subclassing.
 """
+from routes import url_for
+
 from pylons import config, tmpl_context as c, request
 from pylons.controllers import WSGIController
 from pylons.decorators.secure import abort
@@ -38,13 +40,25 @@ class ProjectsBaseController(BaseController):
     def __before__(self):
         super(ProjectsBaseController, self).__before__()
         c.menu_items = ProjectsBaseController.menu_items
+        self.project_name = request.urlvars.get('project')
+        c.url = request.path_qs
     
     @classmethod
-    def register_menu_item(cls, menu_item):
+    def register_menu_item(cls, name, menu_item):
         cls.menu_items.append(menu_item)
     
     @classmethod
-    def deregister_menu_item(cls, menu_item):
+    def deregister_menu_item(cls, name, menu_item):
         cls.menu_items.remove(menu_item)
 
-register('ProjectsBaseController', ProjectsBaseController)
+class ProjectsMenuItem(object):
+    
+    def __init__(self, label, class_='', **urlargs):
+        self.label = label
+        self.class_ = class_
+        self.urlargs = urlargs
+    
+    def get_url(self, project):
+        url_args = self.urlargs.copy()
+        url_args['project'] = project
+        return url_for(**url_args)
