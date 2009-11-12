@@ -6,6 +6,7 @@
 		<title>Snakepit</title>
 		${h.tags.stylesheet_link('/css/snakepit.css')}
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="/images/favicon.png" />
 		
 		${h.tags.javascript_link('/js/mootools-1.2.4-core-yc.js', '/js/snakepit.js')}
 	</head>
