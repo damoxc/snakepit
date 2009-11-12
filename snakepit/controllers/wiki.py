@@ -4,13 +4,14 @@ from pylons import config, request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
 from snakepit.lib.base import ProjectsBaseController, ProjectsMenuItem, connect, render
+from snakepit.model import db, Project
 
 log = logging.getLogger(__name__)
 
 class WikiController(ProjectsBaseController):
 
     def view(self):
-        pass
+        return render('/wiki/view.mao')
 
 connect('/wiki/{project}', controller='wiki', action='view', page=None)
 connect('/wiki/{project}/{page:.*?}', controller='wiki', action='view')

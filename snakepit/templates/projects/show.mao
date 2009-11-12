@@ -1,5 +1,4 @@
 <%inherit file="/project.mao" />
-<% print c.menu_items %>
 <h2>Overview</h2>
 <div class="description">
 	${c.project.description}

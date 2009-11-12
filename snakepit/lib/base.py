@@ -2,18 +2,30 @@
 
 Provides the BaseController class for subclassing.
 """
-from routes import url_for
 
 from pylons import config, tmpl_context as c, request
 from pylons.controllers import WSGIController
 from pylons.decorators.secure import abort
 from pylons.templating import render_mako as render
 
-from snakepit.model import db
+import routes
+
+from snakepit.model import db, Project
 from snakepit.lib.component import register
+from snakepit.lib.helpers import url_for
 
 def connect(*args, **kwargs):
     return config['routes.map'].connect(*args, **kwargs)
+
+_url_for = routes.url_for
+def url_for(*args, **kwargs):
+    remove_keys = [k for k in request.urlvars.keys() if k not in ('controller', 'action', 'project')]
+    if 'controller' in kwargs:
+        tmp = dict(zip(remove_keys, (None,) * len(remove_keys)))
+        tmp.update(kwargs)
+        kwargs = tmp
+    return _url_for(*args, **kwargs)
+routes.url_for = url_for
 
 class BaseController(WSGIController):
     
@@ -42,6 +54,10 @@ class ProjectsBaseController(BaseController):
         c.menu_items = ProjectsBaseController.menu_items
         self.project_name = request.urlvars.get('project')
         c.url = request.path_qs
+        
+        project = request.urlvars.get('project')
+        if project:
+            c.project = db.query(Project).filter_by(identifier=project).first()
     
     @classmethod
     def register_menu_item(cls, name, menu_item):

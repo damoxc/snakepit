@@ -4,7 +4,7 @@
 		<ul>
 			% for menu_item in c.menu_items:
 			<%url = menu_item.get_url(c.project.identifier)%>
-			% if url == c.url:
+			% if c.url.startswith(url):
 				<li class="selected">
 			% else:
 				<li>
