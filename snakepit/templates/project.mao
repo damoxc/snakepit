@@ -9,12 +9,13 @@
 			% else:
 				<li>
 			% endif
+					% if menu_item.class_:
+					<a href="${url}" class="${ menu_item.class_}">${menu_item.label}</a>
+					% else:
 					<a href="${url}">${menu_item.label}</a>
+					% endif
 				</li>
 			% endfor
-			<li class="selected"><a href="/projects/show/deluge" class="overview">Overview</a></li>
-			<li><a href="/projects/activity/deluge" class="activity">Activity</a></li>
-			<li><a href="/projects/settings/deluge" class="settings">Settings</a></li>
 		</ul>
 	</div>
 </%def>
