@@ -22,5 +22,6 @@ def make_map():
     map.connect('/', controller='main')
     map.connect('/projects/{action}', controller='projects')
     map.connect('/projects/{action}/{project}', controller='projects')
+    map.connect('/account/{action}', controller='account')
 
     return map
