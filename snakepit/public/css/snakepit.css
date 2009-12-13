@@ -126,10 +126,12 @@ div#main-menu {
 
 	div#main-menu li:first-child {
 		-moz-border-radius-topleft: 5px;
+		-webkit-border-top-left-radius: 5px;
 	}
 
 	div#main-menu li:last-child {
 		-moz-border-radius-topright: 5px;
+		-webkit-border-top-right-radius: 5px;
 	}
 
 	div#main-menu a {
