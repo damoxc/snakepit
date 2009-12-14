@@ -61,8 +61,8 @@ class ProjectsController(ProjectsBaseController):
 register('ProjectsController', ProjectsController)
 
 ProjectsBaseController.register_menu_item('overview',
-    ProjectsMenuItem('Overview', controller='projects', action='show'))
+    ProjectsMenuItem('Overview', 0, controller='projects', action='show'))
 ProjectsBaseController.register_menu_item('activity',
-    ProjectsMenuItem('Activity', controller='projects', action='activity'))
+    ProjectsMenuItem('Activity', 1, controller='projects', action='activity'))
 ProjectsBaseController.register_menu_item('settings',
-    ProjectsMenuItem('Settings', controller='projects', action='settings'))
+    ProjectsMenuItem('Settings', 99, controller='projects', action='settings'))

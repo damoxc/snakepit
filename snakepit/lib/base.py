@@ -52,6 +52,8 @@ class ProjectsBaseController(BaseController):
     def __before__(self):
         super(ProjectsBaseController, self).__before__()
         c.menu_items = ProjectsBaseController.menu_items
+        c.menu_items.sort()
+        
         self.project_name = request.urlvars.get('project')
         c.url = request.path_qs
         
@@ -69,10 +71,14 @@ class ProjectsBaseController(BaseController):
 
 class ProjectsMenuItem(object):
     
-    def __init__(self, label, class_='', **urlargs):
+    def __init__(self, label, weight, class_='', **urlargs):
         self.label = label
+        self.weight = weight
         self.class_ = class_
         self.urlargs = urlargs
+    
+    def __cmp__(self, other):
+        return cmp(self.weight, other.weight)
     
     def get_url(self, project):
         url_args = self.urlargs.copy()

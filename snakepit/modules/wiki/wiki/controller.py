@@ -44,4 +44,4 @@ connect('/wiki/{project}', controller='wiki', action='view', page=None)
 connect('/wiki/{project}/{page:.*?}/edit', controller='wiki', action='edit')
 connect('/wiki/{project}/{page:.*?}', controller='wiki', action='view')
 ProjectsBaseController.register_menu_item('wiki',
-    ProjectsMenuItem('Wiki', controller='wiki', action='view'))
+    ProjectsMenuItem('Wiki', 5, controller='wiki', action='view'))
