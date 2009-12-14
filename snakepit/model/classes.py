@@ -19,7 +19,7 @@
 #       51 Franklin Street, Fifth Floor
 #       Boston, MA    02110
 
-from sqlalchemy.orm import mapper
+from sqlalchemy.orm import mapper, relation, backref
 from snakepit.model.tables import *
 
 class Project(object):
