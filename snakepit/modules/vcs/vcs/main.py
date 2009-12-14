@@ -1,5 +1,5 @@
 #
-# wiki.py
+# vcs/main.py
 #
 # Copyright (C) 2009 Damien Churchill <damoxc@gmail.com>
 #
@@ -21,19 +21,20 @@
 #   51 Franklin Street, Fifth Floor
 #   Boston, MA  02110-1301, USA.
 
+import os
 from snakepit.lib.module import ModuleBase
 
-class WikiModule(ModuleBase):
+class VCSModule(ModuleBase):
     
     def disable(self):
-        super(WikiModule, self).disable()
-        import controller
-        self.unregister_controller(controller)
+        super(VCSModule, self).disable()
+        import repository
+        self.unregister_controller(repository)
     
     def enable(self):
-        super(WikiModule, self).enable()
+        super(VCSModule, self).enable()
         import model
         self.initialize_model(model)
 
-        import controller
-        self.register_controller('wiki', controller)
+        import repository
+        self.register_controller('repository', repository)

@@ -21,7 +21,10 @@
 #   51 Franklin Street, Fifth Floor
 #   Boston, MA  02110-1301, USA.
 
+import os
 import sys
+
+from pylons import config
 from sqlalchemy import Table
 from snakepit import model
 
@@ -34,7 +37,12 @@ class ModuleBase(object):
         pass
     
     def enable(self):
-        pass
+        dir_name = os.path.dirname(sys.modules[self.__class__.__module__].__file__)
+        
+        # attempt to automatically enable some parts of the plugin
+        template_dir = os.path.join(dir_name, 'templates')
+        if os.path.isdir(template_dir):
+            self.register_templates_dir(template_dir)
     
     def initialize_model(self, module):
         for attr in dir(module):
@@ -45,3 +53,6 @@ class ModuleBase(object):
     
     def register_controller(self, name, module):
         sys.modules['snakepit.controllers.' + name] = module
+    
+    def register_templates_dir(self, template_dir):
+        config['pylons.app_globals'].mako_lookup.directories.append(template_dir)

@@ -47,6 +47,7 @@ class ModulesManager(object):
         self.scan_for_modules()
         
         self.enable_module('wiki')
+        self.enable_module('vcs')
     
     def scan_for_modules(self):
         """Scans for available modules"""
