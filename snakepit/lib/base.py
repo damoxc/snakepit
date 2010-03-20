@@ -11,7 +11,6 @@ from pylons.templating import render_mako as render
 import routes
 
 from snakepit.model import db, Project
-from snakepit.lib.component import register
 from snakepit.lib.helpers import url_for
 
 def connect(*args, **kwargs):

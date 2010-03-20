@@ -4,7 +4,6 @@ from pylons import request, response, session, tmpl_context as c
 from pylons.controllers.util import abort, redirect_to
 
 from snakepit.lib.base import ProjectsBaseController, ProjectsMenuItem, render
-from snakepit.lib.component import register
 from snakepit.model import db, Project
 
 log = logging.getLogger(__name__)
@@ -58,7 +57,7 @@ class ProjectsController(ProjectsBaseController):
         ]
         return render('/projects/settings.mao')
 
-register('ProjectsController', ProjectsController)
+#register('ProjectsController', ProjectsController)
 
 ProjectsBaseController.register_menu_item('overview',
     ProjectsMenuItem('Overview', 0, controller='projects', action='show'))
