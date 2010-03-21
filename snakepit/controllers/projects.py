@@ -57,8 +57,6 @@ class ProjectsController(ProjectsBaseController):
         ]
         return render('/projects/settings.mao')
 
-#register('ProjectsController', ProjectsController)
-
 ProjectsBaseController.register_menu_item('overview',
     ProjectsMenuItem('Overview', 0, controller='projects', action='show'))
 ProjectsBaseController.register_menu_item('activity',
