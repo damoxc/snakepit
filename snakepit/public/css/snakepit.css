@@ -54,16 +54,16 @@ div#toplinks li {
 	line-height: 28px;
 }
 
-div#toplinks li a {
-	color: #fff;
-	font-size: 11px;
-	font-weight: bold;
-	text-decoration: none;
-}
+	div#toplinks li a {
+		color: #fff;
+		font-size: 11px;
+		font-weight: bold;
+		text-decoration: none;
+	}
 
-div#toplinks li a:hover {
-	text-decoration: underline;
-}
+		div#toplinks li a:hover {
+			text-decoration: underline;
+		}
 
 div#account {
 	width: auto;
@@ -93,15 +93,15 @@ div#header {
 			display: none;
 		}
 
-div#header h2 {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	margin: 0;
-	padding: 0;
-	color: #5a6683;
-	font-size: 2.5em;
-}
+	div#header h2 {
+		position: absolute;
+		left: 5px;
+		top: 5px;
+		margin: 0;
+		padding: 0;
+		color: #5a6683;
+		font-size: 2.5em;
+	}
 
 div#main-menu {
 	position: absolute;
@@ -125,6 +125,7 @@ div#main-menu {
 	}
 
 	div#main-menu li:first-child {
+		border-width: 1px 1px 0 1px;
 		-moz-border-radius-topleft: 5px;
 		-webkit-border-top-left-radius: 5px;
 	}
@@ -141,8 +142,12 @@ div#main-menu {
 		display: block;
 	}
 
-	div#main-menu li.selected {
+	div#main-menu li:hover {
 		background: #efefef;
+	}
+
+	div#main-menu li.selected {
+		background: #fff;
 	}
 
 div#body {
@@ -238,8 +243,8 @@ form button {
 
 
 /*********************
-	* Login Form Starts *
-	*********************/
+ * Login Form Starts *
+ *********************/
 form#login {
 	background: #FFEBC1;
 	border: 2px solid #FDBF3B;
@@ -261,3 +266,20 @@ form#login {
 		bottom: 10px;
 		right: 10px;
 	}
+
+/*******************
+ * Login Form Ends *
+ *******************/
+
+div.tabs ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.tabs li {
+	float: left;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-left: 5px;
+}
